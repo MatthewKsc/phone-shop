@@ -18,8 +18,8 @@ on data
 ## MongoDB compass 
 
 **Simple connection with a database on default port** (same in application.yml)
-![Alt text](src\main\resources\static\conncection.png?raw=true "mongoCompass")
+![Alt text](https://github.com/MatthewKsc/phone-shop/blob/master/src/main/resources/static/conncection.png?raw=true "mongoCompass")
 <br>
 <br>
 **This show's result's in Mongo Compass**
-![Alt text](src\main\resources\static\mongoCompass.png?raw=true "mongoCompass")
+![Alt text](https://github.com/MatthewKsc/phone-shop/blob/master/src/main/resources/static/mongoCompass.png?raw=true "mongoCompass")
