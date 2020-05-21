@@ -40,12 +40,12 @@ public class PhoneController {
     }
 
     @PostMapping
-    public void insertPhone(@RequestBody Phone phone){
-        phoneService.insert(phone);
+    public Phone insertPhone(@RequestBody Phone phone){
+        return phoneService.insert(phone);
     }
 
     @PutMapping("/update")
-    public void updatePhone(@RequestBody Phone phone){
-        phoneService.save(phone); //in mongo its update with upsert: true
+    public Phone updatePhone(@RequestBody Phone phone){
+        return phoneService.save(phone); //in mongo its update with upsert: true
     }
 }

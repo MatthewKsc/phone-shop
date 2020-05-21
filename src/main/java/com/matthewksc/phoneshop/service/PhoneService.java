@@ -14,16 +14,16 @@ public class PhoneService {
         this.phoneRepository = phoneRepository;
     }
 
-    public void insertAll(List<Phone> phones){
-        phoneRepository.insert(phones);
+    public List<Phone> insertAll(List<Phone> phones){
+        return phoneRepository.insert(phones);
     }
 
-    public void save(Phone phones){
-        phoneRepository.save(phones);
+    public Phone save(Phone phones){
+        return phoneRepository.save(phones);
     }
 
-    public void insert(Phone phones){
-        phoneRepository.insert(phones);
+    public Phone insert(Phone phones){
+        return phoneRepository.insert(phones);
     }
 
     public Phone findByModel(String model){
@@ -50,4 +50,5 @@ public class PhoneService {
     public void deleteAll(){
         phoneRepository.deleteAll();
     }
+
 }
