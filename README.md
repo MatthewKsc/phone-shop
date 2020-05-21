@@ -11,10 +11,13 @@ Intellij.
 send data in json to web
 * `src\main\java\com\matthewksc\phoneshop\dao:` - folder with data logic,
 entity's and repository
+* `src\main\java\com\matthewksc\phoneshop\exeptions:` - folder with
+exceptions to handle errors and give basic message
 * `src\main\java\com\matthewksc\phoneshop\service:` - service to make operations 
 on data
 * `src\main\java\com\matthewksc\phoneshop\init.java:` - simple init of data
-
+* `src\test\java\com\matthewksc\phoneshop\service:`- simple testing of service
+class with JUnit and Mockito
 ## MongoDB compass 
 
 **Simple connection with a database on default port** (same in application.yml)
