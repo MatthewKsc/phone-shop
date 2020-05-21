@@ -3,6 +3,7 @@ package com.matthewksc.phoneshop.service;
 import com.matthewksc.phoneshop.dao.PhoneRepository;
 import com.matthewksc.phoneshop.dao.entity.Company;
 import com.matthewksc.phoneshop.dao.entity.Phone;
+import com.matthewksc.phoneshop.exeptions.NotFoundPhoneException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -71,14 +72,14 @@ public class PhoneServiceTest {
         Phone withModel = new Phone();
         withModel.setModel("testmodel");
         given(phoneRepository.findByModel("testmodel")).willReturn(java.util.Optional.of(withModel));
-        given(phoneRepository.findByModel("wdawad")).willThrow(RuntimeException.class);
+        given(phoneRepository.findByModel("wdawad")).willThrow(NotFoundPhoneException.class);
 
         Phone check = phoneService.findByModel("testmodel");
         Phone fake = new Phone();
 
         assertEquals(check, withModel);
         assertNotEquals(fake, check);
-        assertThrows(RuntimeException.class,() -> phoneService.findByModel("wdawad"));
+        assertThrows(NotFoundPhoneException.class,() -> phoneService.findByModel("wdawad"));
     }
 
     @Test

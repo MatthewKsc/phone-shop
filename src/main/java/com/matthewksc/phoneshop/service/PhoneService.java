@@ -2,6 +2,7 @@ package com.matthewksc.phoneshop.service;
 
 import com.matthewksc.phoneshop.dao.PhoneRepository;
 import com.matthewksc.phoneshop.dao.entity.Phone;
+import com.matthewksc.phoneshop.exeptions.NotFoundPhoneException;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class PhoneService {
 
     public Phone findByModel(String model){
         return phoneRepository.findByModel(model)
-                .orElseThrow(() -> new RuntimeException("No such model in database")); //todo own exception
+                .orElseThrow(() -> new NotFoundPhoneException(model));
     }
 
     public Iterable<Phone> findUnderPrice(Double max){
